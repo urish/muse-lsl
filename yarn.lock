@@ -36,6 +36,13 @@ are-we-there-yet@~1.1.2:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
 
+array-index@1:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/array-index/-/array-index-1.0.0.tgz#ec56a749ee103e4e08c790b9c353df16055b97f9"
+  dependencies:
+    debug "^2.2.0"
+    es6-symbol "^3.0.2"
+
 asn1@~0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.3.tgz#dac8787713c9966849fc8180777ebe9c1ddf3b86"
@@ -70,9 +77,19 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+bindings@1, bindings@~1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.2.1.tgz#14ad6113812d2d37d72e67b4cacb4bb726505f11"
+
 bleat@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/bleat/-/bleat-0.1.3.tgz#7d13c0b869879b53fb94be18fa84854d5b39dec0"
+  optionalDependencies:
+    noble "^1.3.0"
+
+bleat@urish/bleat#patch-1:
+  version "0.1.3"
+  resolved "https://codeload.github.com/urish/bleat/tar.gz/76064463ab700c45278babcf5545637608a896ad"
   optionalDependencies:
     noble "^1.3.0"
 
@@ -144,13 +161,19 @@ cryptiles@2.x.x:
   dependencies:
     boom "2.x.x"
 
+d@1:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/d/-/d-1.0.0.tgz#754bb5bfe55451da69a58b94d45f4c5b0462d58f"
+  dependencies:
+    es5-ext "^0.10.9"
+
 dashdash@^1.12.0:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/dashdash/-/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
   dependencies:
     assert-plus "^1.0.0"
 
-debug@^2.2.0, debug@~2.2.0:
+debug@2, debug@^2.2.0, debug@~2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
   dependencies:
@@ -174,6 +197,28 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
 
+es5-ext@^0.10.14, es5-ext@^0.10.9, es5-ext@~0.10.14:
+  version "0.10.23"
+  resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.23.tgz#7578b51be974207a5487821b56538c224e4e7b38"
+  dependencies:
+    es6-iterator "2"
+    es6-symbol "~3.1"
+
+es6-iterator@2:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/es6-iterator/-/es6-iterator-2.0.1.tgz#8e319c9f0453bf575d374940a655920e59ca5512"
+  dependencies:
+    d "1"
+    es5-ext "^0.10.14"
+    es6-symbol "^3.1"
+
+es6-symbol@^3.0.2, es6-symbol@^3.1, es6-symbol@~3.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/es6-symbol/-/es6-symbol-3.1.1.tgz#bf00ef4fdab6ba1b46ecb7b629b4c7ed5715cc77"
+  dependencies:
+    d "1"
+    es5-ext "~0.10.14"
+
 extend@~3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
@@ -181,6 +226,16 @@ extend@~3.0.0:
 extsprintf@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
+
+ffi@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/ffi/-/ffi-2.2.0.tgz#bf18b04666a29f71227ed56895d5430af47042fa"
+  dependencies:
+    bindings "~1.2.0"
+    debug "2"
+    nan "2"
+    ref "1"
+    ref-struct "1"
 
 forever-agent@~0.6.1:
   version "0.6.1"
@@ -391,7 +446,7 @@ muse-js@^0.4.0:
     "@types/web-bluetooth" "^0.0.2"
     rxjs "^5.4.0"
 
-nan@^2.0.5, nan@^2.4.0:
+nan@2, nan@^2.0.5, nan@^2.4.0:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.6.2.tgz#e4ff34e6c95fdfb5aecc08de6596f43605a7db45"
 
@@ -508,6 +563,29 @@ readable-stream@^2.0.6, readable-stream@^2.1.4:
     safe-buffer "~5.0.1"
     string_decoder "~1.0.0"
     util-deprecate "~1.0.1"
+
+ref-array@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ref-array/-/ref-array-1.2.0.tgz#bba870152d4ee0abed1421b062392f0b0184290c"
+  dependencies:
+    array-index "1"
+    debug "2"
+    ref "1"
+
+ref-struct@1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ref-struct/-/ref-struct-1.1.0.tgz#5d5ee65ad41cefc3a5c5feb40587261e479edc13"
+  dependencies:
+    debug "2"
+    ref "1"
+
+ref@1:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/ref/-/ref-1.3.4.tgz#724d2bf8ac85f8c8db194d3d85be6efe416bc1e5"
+  dependencies:
+    bindings "1"
+    debug "2"
+    nan "2"
 
 request@^2.81.0:
   version "2.81.0"
