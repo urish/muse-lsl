@@ -1,0 +1,15 @@
+{
+  "name": "muse-lsl",
+  "version": "1.0.0",
+  "description": "Muse 2016 EEG Headset LSL Server for Node.js",
+  "main": "index.js",
+  "author": "Uri Shaked",
+  "license": "MIT",
+  "dependencies": {
+    "bleat": "^0.1.3",
+    "muse-js": "^0.4.0",
+    "noble": "^1.8.1",
+    "text-encoding": "^0.6.4",
+    "usb": "^1.2.0"
+  }
+}
