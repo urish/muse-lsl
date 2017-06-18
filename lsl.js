@@ -25,6 +25,7 @@ const lsl = ffi.Library('liblsl64', {
     'lsl_append_child': [xmlPtr, [xmlPtr, 'string']],
     'lsl_create_outlet': [outletType, [streamInfo, 'int', 'int']],
     'lsl_push_sample_f': ['void', [outletType, FloatArray]],
+    'lsl_push_sample_ft': ['void', [outletType, FloatArray, 'double']],
     'lsl_destroy_outlet': ['void', [outletType]],
 });
 
@@ -37,5 +38,6 @@ module.exports = {
     append_child: lsl.lsl_append_child,
     create_outlet: lsl.lsl_create_outlet,
     push_sample_f: lsl.lsl_push_sample_f,
+    push_sample_ft: lsl.lsl_push_sample_ft,
     destroy_outlet: lsl.lsl_destroy_outlet,
 };
