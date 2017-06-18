@@ -747,7 +747,7 @@ uid-number@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/uid-number/-/uid-number-0.0.6.tgz#0ea10e8035e8eb5b8e4449f06da1c730663baa81"
 
-usb@^1.1.0, usb@^1.2.0:
+usb@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/usb/-/usb-1.2.0.tgz#ab72d9786a047068919a024d08c7a1c5b1e60f47"
   dependencies:

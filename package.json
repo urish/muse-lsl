@@ -15,7 +15,6 @@
     "muse-js": "^0.4.1",
     "noble": "^1.8.1",
     "ref-array": "^1.2.0",
-    "text-encoding": "^0.6.4",
-    "usb": "^1.2.0"
+    "text-encoding": "^0.6.4"
   }
 }
