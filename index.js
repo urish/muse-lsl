@@ -1,6 +1,6 @@
 require('./text-polyfill');
 
-const { MUSE_SERVICE, MuseClient } = require('muse-js');
+const { MUSE_SERVICE, MuseClient, zipSamples } = require('muse-js');
 const noble = require('noble');
 const bleat = require('bleat').webbluetooth;
 const lsl = require('./lsl');
@@ -40,21 +40,11 @@ function streamLsl(client) {
     const outlet = lsl.create_outlet(info, 0, 360);
     let sampleCounter = 0;
 
-    Observable.from(client.eegReadings)
-        .bufferCount(5)
-        .mergeMap(electrodes =>
-            electrodes.reduce((samples, electrode) =>
-                samples.map((sample, index) => ({
-                    timestamp: electrode.timestamp,
-                    channelData: [...sample.channelData, electrode.samples[index]]
-                })),
-                electrodes[0].samples.map(() => ({ channelData: [] })))
-        )
+    Observable.from(zipSamples(client.eegReadings))
         .finally(() => lsl.lsl_destroy_outlet(outlet))
-        .subscribe(values => {
-            const sample = new lsl.FloatArray(values.channelData);
-            lsl.push_sample_f(outlet, sample);
-
+        .subscribe(sample => {
+            const sampleData = new lsl.FloatArray(sample.channelData);
+            lsl.push_sample_f(outlet, sampleData);
             sampleCounter++;
             process.stdout.clearLine();
             process.stdout.cursorTo(0);
