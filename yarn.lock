@@ -81,9 +81,9 @@ bindings@1, bindings@~1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.2.1.tgz#14ad6113812d2d37d72e67b4cacb4bb726505f11"
 
-bleat@urish/bleat#patch-1:
-  version "0.1.3"
-  resolved "https://codeload.github.com/urish/bleat/tar.gz/76064463ab700c45278babcf5545637608a896ad"
+bleat@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/bleat/-/bleat-0.1.4.tgz#ffcdb43a8687471451ac273b5836d617d141cdf7"
   optionalDependencies:
     noble "^1.3.0"
 

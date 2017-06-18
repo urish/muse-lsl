@@ -10,7 +10,7 @@
     "start": "node index"
   },
   "dependencies": {
-    "bleat": "urish/bleat#patch-1",
+    "bleat": "^0.1.4",
     "ffi": "^2.2.0",
     "muse-js": "^0.4.1",
     "noble": "^1.8.1",
