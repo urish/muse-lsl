@@ -19,7 +19,7 @@ const LSLTypes = {
 }
 
 const lsl = ffi.Library('liblsl64', {
-    'lsl_create_streaminfo': [streamInfo, ['string', 'string', 'int', 'int', 'int', 'string']],
+    'lsl_create_streaminfo': [streamInfo, ['string', 'string', 'int', 'double', 'int', 'string']],
     'lsl_get_desc': [xmlPtr, [streamInfo]],
     'lsl_append_child_value': ['void', [xmlPtr, 'string', 'string']],
     'lsl_append_child': [xmlPtr, [xmlPtr, 'string']],
