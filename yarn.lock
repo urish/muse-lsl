@@ -167,7 +167,13 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-debug@2, debug@^2.2.0, debug@~2.2.0:
+debug@2, debug@^2.2.0:
+  version "2.6.8"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
+  dependencies:
+    ms "2.0.0"
+
+debug@~2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
   dependencies:
@@ -432,9 +438,13 @@ ms@0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
 
+ms@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
+
 muse-js@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/muse-js/-/muse-js-0.4.1.tgz#b0babe3fe1bde07fb20b992baf563a951bcba922"
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/muse-js/-/muse-js-0.4.2.tgz#8a924e116c79e4061fd92469ffd73bf177833809"
   dependencies:
     "@types/text-encoding" "^0.0.30"
     "@types/web-bluetooth" "^0.0.2"
