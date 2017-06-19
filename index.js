@@ -25,6 +25,9 @@ async function connect() {
 function streamLsl(client) {
     console.log('LSL: Creating Stream...');
 
+    // These packets keep the connection alive
+    const keepaliveTimer = setInterval(() => client.sendCommand(''), 3000);
+
     const deviceName = client.gatt.device.name;
     const info = lsl.create_streaminfo("Muse", "EEG", 5, 256, lsl.LSLTypes.cft_float32, deviceName);
     const desc = lsl.get_desc(info);
@@ -42,7 +45,10 @@ function streamLsl(client) {
     let sampleCounter = 0;
 
     Observable.from(zipSamples(client.eegReadings))
-        .finally(() => lsl.lsl_destroy_outlet(outlet))
+        .finally(() => {
+            lsl.lsl_destroy_outlet(outlet);
+            clearInterval(keepaliveTimer);
+        })
         .subscribe(sample => {
             const sampleData = new lsl.FloatArray(sample.channelData);
             lsl.push_sample_ft(outlet, sampleData, lsl.local_clock());
@@ -50,7 +56,7 @@ function streamLsl(client) {
             process.stdout.clearLine();
             process.stdout.cursorTo(0);
             process.stdout.write(`LSL: Sent ${sampleCounter} samples`);;
-        })
+        });
 }
 
 noble.on('stateChange', (state) => {
@@ -58,4 +64,3 @@ noble.on('stateChange', (state) => {
         connect().then(streamLsl);
     }
 });
-
