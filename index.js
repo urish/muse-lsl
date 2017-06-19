@@ -45,7 +45,7 @@ function streamLsl(client) {
         .finally(() => lsl.lsl_destroy_outlet(outlet))
         .subscribe(sample => {
             const sampleData = new lsl.FloatArray(sample.channelData);
-            lsl.push_sample_f(outlet, sampleData);
+            lsl.push_sample_ft(outlet, sampleData, lsl.local_clock());
             sampleCounter++;
             process.stdout.clearLine();
             process.stdout.cursorTo(0);
