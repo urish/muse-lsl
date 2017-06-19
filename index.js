@@ -30,9 +30,10 @@ function streamLsl(client) {
     const desc = lsl.get_desc(info);
     lsl.append_child_value(desc, "manufacturer", "Interaxon");
     const channels = lsl.append_child(desc, "channels");
+    const chans = ['TP9', 'AF7', 'AF8', 'TP10', 'AUX'];
     for (let i = 0; i < 5; i++) {
         let channel = lsl.append_child(channels, "channel");
-        lsl.append_child_value(channel, "label", `chan${i}`);
+        lsl.append_child_value(channel, "label", chans[i]);
         lsl.append_child_value(channel, "unit", "microvolts");
         lsl.append_child_value(channel, "type", "EEG");
     }
@@ -57,3 +58,4 @@ noble.on('stateChange', (state) => {
         connect().then(streamLsl);
     }
 });
+
