@@ -8,8 +8,7 @@ const { Observable } = require('rxjs');
 
 async function connect() {
     let device = await bleat.requestDevice({
-        filters: [{ name: 'Muse-1324' }],
-        optionalServices: [MUSE_SERVICE]
+        filters: [{ services: [MUSE_SERVICE] }]
     });
     const gatt = await device.gatt.connect();
     console.log('Device name:', gatt.device.name);
