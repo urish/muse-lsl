@@ -442,9 +442,9 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-muse-js@^0.4.1:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/muse-js/-/muse-js-0.4.2.tgz#8a924e116c79e4061fd92469ffd73bf177833809"
+muse-js@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/muse-js/-/muse-js-0.5.0.tgz#c7882f68ef372ccad84f151563c4fc17c71ef111"
   dependencies:
     "@types/text-encoding" "^0.0.30"
     "@types/web-bluetooth" "^0.0.2"

@@ -1,6 +1,6 @@
 require('./text-polyfill');
 
-const { MUSE_SERVICE, MuseClient, zipSamples } = require('muse-js');
+const { MUSE_SERVICE, MuseClient, zipSamples, channelNames } = require('muse-js');
 const noble = require('noble');
 const bleat = require('bleat').webbluetooth;
 const lsl = require('./lsl');
@@ -28,15 +28,13 @@ function streamLsl(client) {
     // These packets keep the connection alive
     const keepaliveTimer = setInterval(() => client.sendCommand(''), 3000);
 
-    const deviceName = client.gatt.device.name;
-    const info = lsl.create_streaminfo("Muse", "EEG", 5, 256, lsl.LSLTypes.cft_float32, deviceName);
+    const info = lsl.create_streaminfo("Muse", "EEG", 5, 256, lsl.LSLTypes.cft_float32, client.deviceName);
     const desc = lsl.get_desc(info);
     lsl.append_child_value(desc, "manufacturer", "Interaxon");
     const channels = lsl.append_child(desc, "channels");
-    const chans = ['TP9', 'AF7', 'AF8', 'TP10', 'AUX'];
     for (let i = 0; i < 5; i++) {
-        let channel = lsl.append_child(channels, "channel");
-        lsl.append_child_value(channel, "label", chans[i]);
+        const channel = lsl.append_child(channels, "channel");
+        lsl.append_child_value(channel, "label", channelNames[i]);
         lsl.append_child_value(channel, "unit", "microvolts");
         lsl.append_child_value(channel, "type", "EEG");
     }
@@ -50,7 +48,7 @@ function streamLsl(client) {
             clearInterval(keepaliveTimer);
         })
         .subscribe(sample => {
-            const sampleData = new lsl.FloatArray(sample.channelData);
+            const sampleData = new lsl.FloatArray(sample.data);
             lsl.push_sample_ft(outlet, sampleData, lsl.local_clock());
             sampleCounter++;
             process.stdout.clearLine();
