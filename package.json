@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "bleat": "^0.1.4",
-    "ffi": "^2.2.0",
     "muse-js": "^0.5.0",
     "noble": "^1.8.1",
-    "ref-array": "^1.2.0",
-    "text-encoding": "^0.6.4"
+    "node-lsl": "^0.1.0",
+    "text-encoding": "^0.6.4",
+    "usb": "^1.2.0"
   }
 }

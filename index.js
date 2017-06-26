@@ -3,7 +3,7 @@ require('./text-polyfill');
 const { MUSE_SERVICE, MuseClient, zipSamples, channelNames } = require('muse-js');
 const noble = require('noble');
 const bleat = require('bleat').webbluetooth;
-const lsl = require('./lsl');
+const lsl = require('node-lsl');
 const { Observable } = require('rxjs');
 
 async function connect() {
@@ -27,7 +27,7 @@ function streamLsl(client) {
     // These packets keep the connection alive
     const keepaliveTimer = setInterval(() => client.sendCommand(''), 3000);
 
-    const info = lsl.create_streaminfo("Muse", "EEG", 5, 256, lsl.LSLTypes.cft_float32, client.deviceName);
+    const info = lsl.create_streaminfo("Muse", "EEG", 5, 256, lsl.channel_format_t.cft_float32, client.deviceName);
     const desc = lsl.get_desc(info);
     lsl.append_child_value(desc, "manufacturer", "Interaxon");
     const channels = lsl.append_child(desc, "channels");
