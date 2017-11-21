@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "bleat": "^0.1.4",
-    "muse-js": "^0.5.0",
+    "muse-js": "^1.0.0",
     "noble": "^1.8.1",
     "node-lsl": "^0.1.0",
     "text-encoding": "^0.6.4",

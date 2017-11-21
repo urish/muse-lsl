@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@types/text-encoding@^0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/@types/text-encoding/-/text-encoding-0.0.30.tgz#2ad7bc19287094c9d2754d238e0994dd2995781f"
+"@types/text-encoding@^0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@types/text-encoding/-/text-encoding-0.0.32.tgz#52289b320a406850b14f08f48b475ca021218048"
 
 "@types/web-bluetooth@^0.0.2":
   version "0.0.2"
@@ -432,13 +432,13 @@ ms@0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
 
-muse-js@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/muse-js/-/muse-js-0.5.0.tgz#c7882f68ef372ccad84f151563c4fc17c71ef111"
+muse-js@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/muse-js/-/muse-js-1.0.0.tgz#1b08be7f7311fab03e2ca594404577399b9ff652"
   dependencies:
-    "@types/text-encoding" "^0.0.30"
+    "@types/text-encoding" "^0.0.32"
     "@types/web-bluetooth" "^0.0.2"
-    rxjs "^5.4.0"
+    rxjs "^5.5.0"
 
 nan@2, nan@^2.0.5, nan@^2.4.0:
   version "2.6.2"
@@ -622,9 +622,9 @@ rimraf@2, rimraf@^2.5.1, rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
-rxjs@^5.4.0:
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.4.1.tgz#b62f757f279445d265a18a58fb0a70dc90e91626"
+rxjs@^5.5.0:
+  version "5.5.2"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.2.tgz#28d403f0071121967f18ad665563255d54236ac3"
   dependencies:
     symbol-observable "^1.0.1"
 
